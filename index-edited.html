@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Form Styleguide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleguide.css">
+	<script src="lib/jquery.js"></script>
+	<script src="dist/jquery.validate.js"></script>
+	<script>
+    
+        
+	$.validator.setDefaults({
+		submitHandler: function() {
+//			alert("submitted!");
+           $('#success-message').show();
+		}
+	});
+
+	$().ready(function() {
+		// 
+		$("#basicForm").validate();
+
+		// 
+		$("#passwordForm").validate({
+			rules: {
+				password: {
+					required: true,
+					minlength: 5
+				},
+				confirm_password: {
+					required: true,
+					minlength: 5,
+					equalTo: "#password"
+				},
+				email: {
+					required: true,
+					email: true
+				},
+			},
+			messages: {
+				password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long"
+				},
+				confirm_password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long",
+					equalTo: "Please enter the same password as above"
+				},
+				email: "Please enter a valid email address",
+			}
+		});
+	});
+	</script>
+
+</head>
+<body>     
+    <div id="success-message">
+	   <p>Success! Your settings have been saved!</p> 
+    </div>
+    <div id="error-message">
+	   <p>Oh No! There is an error in your form.</p>
+    </div>
+    <form>
+	<form class="cmxform" id="basicForm" method="get" action="">
+		<fieldset>
+			<p>
+				<label for="cname"><h3>Name</h3></label>
+				<input id="cname" name="name" minlength="2" type="text" required>
+			</p>
+			<p>
+				<label for="cemail"><h3>E-mail</h3></label>
+				<input id="cemail" type="email" name="email" required>
+			</p>
+			<p>
+				<input class="submit" type="submit" value="Save Changes">
+			</p>
+		</fieldset>
+	</form>
+	<form class="cmxform" id="passwordForm" method="get" action="">
+		<fieldset>
+			<p>
+				<label for="password"><h3>Password</h3></label>
+				<input id="password" name="password" type="password">
+			</p>
+			<p>
+				<label for="confirm_password"><h3>Confirm Password</h3> </label>
+				<input id="confirm_password" name="confirm_password" type="password">
+			</p>
+			<p>
+				<input class="submit" type="submit" value="Save Changes">
+			</p>
+		</fieldset>
+	</form>
+        
+    <fieldset>
+        <h3>Dropdown</h3>
+            <select>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+    </fieldset>
+    </form>
+    <h3>Radio</h3>
+		<div class="radioinput">
+	  		<input type="radio" id="radio01" name="radio" class="radioinput" />
+	 		<label for="radio01"><span></span>Radio Button 1</label>
+	 	</div>
+	 	<div class="radioinput">
+	 		<input type="radio" id="radio02" name="radio" class="radioinput" />
+	 		<label for="radio02"><span></span>Radio Button 2</label>
+	 	</div>
+</div>
+</body>
+</html>
