@@ -18,9 +18,8 @@
 	});
 
 	$().ready(function() {
-		// 
+		// validate the comment form when it is submitted
 		$("#basicForm").validate();
-
 		// 
 		$("#passwordForm").validate({
 			rules: {
@@ -62,16 +61,15 @@
     <div id="error-message">
 	   <p>Oh No! There is an error in your form.</p>
     </div>
-    <form>
 	<form class="cmxform" id="basicForm" method="get" action="">
 		<fieldset>
 			<p>
 				<label for="cname"><h3>Name</h3></label>
-				<input id="cname" name="name" minlength="2" type="text" required>
+				<input class="textfield" id="cname" name="name" minlength="2" type="text" required>
 			</p>
 			<p>
 				<label for="cemail"><h3>E-mail</h3></label>
-				<input id="cemail" type="email" name="email" required>
+				<input class="textfield" id="cemail" type="email" name="email" required>
 			</p>
 			<p>
 				<input class="submit" type="submit" value="Save Changes">
