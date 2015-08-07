@@ -25,9 +25,9 @@
 
 	$().ready(function() {
 		// validate the basicFrom form when it is submitted
-		$("#basicForm").validate();
+//		$("#basicForm").validate();
 		// 
-		$("#passwordForm").validate({
+		$("#basicForm").validate({
 			rules: {
 				password: {
 					required: true,
@@ -79,11 +79,8 @@
 				<input id="cemail" type="email" name="email" required>
 			</p>
 			<p>
-				<input class="submit" type="submit" value="Save Changes">
 			</p>
 		</fieldset>
-	</form>
-	<form class="cmxform" id="passwordForm" method="get" action="">
 		<fieldset>
 			<p>
 				<label for="password"><h4>Password</h4></label>
