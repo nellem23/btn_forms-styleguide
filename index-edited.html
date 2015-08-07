@@ -9,24 +9,20 @@
 	<script src="dist/jquery.validate.js"></script>
 	<script>
     
-    var options = {
-    errorPlacement: function(error, element) {
-    $("error-message").show();
-    }
-    };
+//    var options = {
+//    errorPlacement: function(error, element) {
+//    $("error-message").show();}
+//    };
+        
     $("basicForm").validate(options);
     
 	$.validator.setDefaults({
 		submitHandler: function() {
-//			alert("submitted!");
            $('#success-message').show();
 		}
 	});
 
 	$().ready(function() {
-		// validate the basicFrom form when it is submitted
-//		$("#basicForm").validate();
-		// 
 		$("#basicForm").validate({
 			rules: {
 				password: {
@@ -58,10 +54,24 @@
 			}
 		});
 	});
+        
+  $(document).ready(function(){
+    $('#success-message').click(function(){
+        $(this).hide();
+    });
+  });
+        
+    $(document).ready(function(){
+    $('#error-message').click(function(){
+        $(this).hide();
+    });
+  });
+        
 	</script>
-
 </head>
-<body>     
+<body>
+    
+    <h2>Profile</h2>
     <div id="success-message">
 	   <p>Success! Your settings have been saved!</p> 
     </div>
@@ -80,8 +90,6 @@
 			</p>
 			<p>
 			</p>
-		</fieldset>
-		<fieldset>
 			<p>
 				<label for="password"><h4>Password</h4></label>
 				<input id="password" name="password" type="password">
