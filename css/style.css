@@ -196,18 +196,4 @@ form.cmxform label.error, label.error {
 	font-size: 16px;
 	font-family: sans-serif;
     color: #ffffff !important;
-z
 }
-
-/*
-#commentForm {}
-#commentForm label {width: 250px;}
-#commentForm label.error, #commentForm input.submit {
-		margin-left: 253px;}
-#signupForm {}
-#signupForm label.error {
-		margin-left: 10px;
-		width: auto;
-		display: inline;
-	}
-*/
